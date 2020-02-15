@@ -1,19 +1,28 @@
 package com.example.myapplicationa3.mvpAzhan
 
+
 interface Contract {
 
-    interface View {
-        fun getcityName(): String
-        fun getcountryName(): String
-        fun showSuccess()
-        fun showError()
-        fun getUserPass(): Pair<String, String>
-
+    interface MainView:parentView{
+        fun openDrawer()
+        fun OpenSearchPage()
     }
 
-    interface Presenter : ParentPresenter {
-        fun onLoginButtonClicked()
-        fun onVerificationResponse(isValid: Boolean)
+    interface ResultView:parentView
+    {
     }
-    interface ParentPresenter {}
+
+    interface SearchView:parentView
+    {
+        fun getCountryAndCity():Pair<String,String>
+        fun OpenResultPage(model: ModelTest)
+    }
+
+    interface Presenter{
+        fun btnSearchCityClicked()
+        fun btnTimesClicked()
+        fun BtnSearchClicked()
+        fun showResultPage()
+    }
+    interface parentView{}
 }

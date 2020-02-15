@@ -88,8 +88,8 @@ data class Method(
 )
 
 data class Params(
-    val Fajr: Int,
-    val Isha: Int
+    val Fajr: Double,
+    val Isha: String
 )
 
 data class Offset(
